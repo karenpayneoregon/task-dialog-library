@@ -1,4 +1,4 @@
-﻿# .NET Core 5 TaskDialog
+﻿# .NET Core 6/7 TaskDialog
 
 When an application requires a message to be display or to ask a user questions the common method is to use a [MessageBox](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messagebox?view=windowsdesktop-6.0).
 
