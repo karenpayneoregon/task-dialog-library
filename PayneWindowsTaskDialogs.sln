@@ -3,14 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32819.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskDialogLibrary", "TaskDialogLibrary\TaskDialogLibrary.csproj", "{2F569ECC-D902-41DA-BF2C-175CAB23E5EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskDialogLibrary", "TaskDialogLibrary\TaskDialogLibrary.csproj", "{2F569ECC-D902-41DA-BF2C-175CAB23E5EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskDialogFrontEndApp", "TaskDialogFrontEndApp\TaskDialogFrontEndApp.csproj", "{146116E5-0E3B-4553-B2CC-236A455802CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskDialogFrontEndApp", "TaskDialogFrontEndApp\TaskDialogFrontEndApp.csproj", "{146116E5-0E3B-4553-B2CC-236A455802CC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{69A38367-97B2-4A58-A1D0-9326BF9C8284}"
 	ProjectSection(SolutionItems) = preProject
 		readme.md = readme.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsLibrary", "WindowsLibrary\WindowsLibrary.csproj", "{B485F398-25F0-443D-BF3D-051E4C9EE345}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +28,10 @@ Global
 		{146116E5-0E3B-4553-B2CC-236A455802CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{146116E5-0E3B-4553-B2CC-236A455802CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{146116E5-0E3B-4553-B2CC-236A455802CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B485F398-25F0-443D-BF3D-051E4C9EE345}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B485F398-25F0-443D-BF3D-051E4C9EE345}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B485F398-25F0-443D-BF3D-051E4C9EE345}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B485F398-25F0-443D-BF3D-051E4C9EE345}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

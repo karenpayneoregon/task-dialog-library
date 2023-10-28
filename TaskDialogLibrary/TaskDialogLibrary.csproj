@@ -12,6 +12,12 @@
     <PackageReadmeFile>readme.md</PackageReadmeFile>
     <RepositoryType>git</RepositoryType>
     <PackageTags>MessageBox replacement;TaskDialog</PackageTags>
+    <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+    <PackageProjectUrl>https://github.com/karenpayneoregon/task-dialog-library/tree/master/TaskDialogLibrary</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/karenpayneoregon/task-dialog-library</RepositoryUrl>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <Description>A simple library using TaskDialog as a replacement for MessageBox</Description>
+    <PackageReleaseNotes>Changed title in readme file</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
@@ -38,6 +44,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="licenses\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
     <None Update="nugetImage.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
@@ -47,5 +57,8 @@
       <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
+	<ItemGroup>
+		<None Include="licenses\LICENSE.txt" Pack="true" PackagePath="" />
+	</ItemGroup>
 
 </Project>

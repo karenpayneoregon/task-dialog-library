@@ -1,5 +1,4 @@
-﻿using System.Drawing;
-using TaskDialogLibrary.Classes;
+﻿using TaskDialogLibrary.Classes;
 using TaskDialogLibrary.Models;
 using Timer = System.Windows.Forms.Timer;
 
@@ -362,6 +361,25 @@ public class Dialogs
         };
 
         TaskDialog.ShowDialog(owner, page);
+
+    }
+
+    public static void MsgBox(string heading, string buttonText = "Ok")
+    {
+
+        TaskDialogButton okayButton = new(buttonText);
+
+        TaskDialogPage page = new()
+        {
+            Caption = "Information",
+            SizeToContent = true,
+            Heading = heading,
+            Icon = new TaskDialogIcon(Properties.Resources.exclamation24),
+            Buttons = new TaskDialogButtonCollection() { okayButton }
+        };
+
+
+        TaskDialog.ShowDialog(page, TaskDialogStartupLocation.CenterScreen);
 
     }
 

@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using TaskDialogLibrary;
 
 namespace TaskDialogFrontEndApp
@@ -42,10 +43,12 @@ namespace TaskDialogFrontEndApp
             if (answer && verification)
             {
                 Dialogs.Information("Verified");
-            }else if (answer && !verification)
+            }
+            else if (answer && !verification)
             {
                 Dialogs.Information("Not verified");
-            }else if (!answer && !verification)
+            }
+            else if (!answer && !verification)
             {
                 Dialogs.Information("Declined");
             }
@@ -58,7 +61,21 @@ namespace TaskDialogFrontEndApp
 
         private void AutoCloseButton_Click(object sender, EventArgs e)
         {
-            Dialogs.AutoCloseDialog(this, $"Select Yes or no or auto contine in {SecondsUpDown.AsInteger} seconds", "Waiting...",Properties.Resources.Timer_16x, SecondsUpDown.AsInteger);
+            Dialogs.AutoCloseDialog(this, $"Select Yes or no or auto continue in {SecondsUpDown.AsInteger} seconds", "Waiting...", Properties.Resources.Timer_16x, SecondsUpDown.AsInteger);
+        }
+
+        public void DataOperations()
+        {
+            // do data operations
+        }
+        public void Terminate()
+        {
+            // here we are in the main form so Close terminates the app
+            Close();
+        }
+        private void ActionQuestionButton_Click(object sender, EventArgs e)
+        {
+            Dialogs.Question(this, "Ask something", DataOperations, Terminate);
         }
     }
 }
