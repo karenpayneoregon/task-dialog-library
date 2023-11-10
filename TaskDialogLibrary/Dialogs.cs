@@ -189,13 +189,14 @@ public class Dialogs
         return result.Tag is not null && (DialogResult)result.Tag == DialogResult.Yes;
     }
 
-    public static (bool yesNo, bool verify) Question(Control owner, string heading, bool verify, DialogResult defaultButton = DialogResult.Yes)
+    public static (bool yesNo, bool verify) Question(
+        Control owner, string heading, bool verify, DialogResult defaultButton = DialogResult.Yes)
     {
 
         TaskDialogButton yesButton = new("Yes") { Tag = DialogResult.Yes };
         TaskDialogButton noButton = new("No") { Tag = DialogResult.No };
-        TaskDialogVerificationCheckBox verifyCheckBox = new TaskDialogVerificationCheckBox("Verify");
-        TaskDialogButtonCollection buttons = new TaskDialogButtonCollection();
+        TaskDialogVerificationCheckBox verifyCheckBox = new("Verify");
+        TaskDialogButtonCollection buttons = new();
 
         if (defaultButton == DialogResult.Yes)
         {
@@ -223,7 +224,6 @@ public class Dialogs
             page.Verification = verifyCheckBox;
         }
         
-
         var result = TaskDialog.ShowDialog(owner, page);
 
         return (result.Tag is not null && (DialogResult)result.Tag == DialogResult.Yes, verifyCheckBox.Checked);
@@ -234,12 +234,11 @@ public class Dialogs
     /// </summary>
     /// <param name="owner">control or form</param>
     /// <param name="heading">text for dialog heading</param>
-    /// <param name="yesAction"></param>
+    /// <param name="yesAction">Confirmation action</param>
+    /// <param name="noAction">Decline action</param>
     /// <returns>true for yes button, false for no button</returns>
     /// <remarks>
     /// Dialogs.Question(this, "Ask something", YesMethod, NoMethod);
-    ///
-    /// Last two parameters are the actions to perform
     /// </remarks>
     public static void Question(Control owner, string heading, Action yesAction, Action noAction)
     {
@@ -252,7 +251,6 @@ public class Dialogs
             yesButton,
             noButton
         };
-
 
         TaskDialogPage page = new()
         {
@@ -558,7 +556,7 @@ public class Dialogs
 
         TaskDialogButton singleButton = new(buttonText);
 
-        var text = $"Encountered the following{"\n"}{exception.Message}";
+        var text = $"Encountered the following{Environment.NewLine}{exception.Message}";
 
 
         TaskDialogPage page = new()

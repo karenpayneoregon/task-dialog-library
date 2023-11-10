@@ -75,7 +75,7 @@ namespace TaskDialogFrontEndApp
         }
         private void ActionQuestionButton_Click(object sender, EventArgs e)
         {
-            Dialogs.Question(this, "Ask something", DataOperations, Terminate);
+            Dialogs.Question(this, "Continue backing database or terminate?", DataOperations, Terminate);
         }
     }
 }
