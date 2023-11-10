@@ -14,7 +14,7 @@ namespace TaskDialogLibrary;
 /// - IMPORTANT Some methods have Debug.WriteLine and should be removed for use
 ///   in your projects/applications.
 /// </remarks>
-public class Dialogs
+public partial class Dialogs
 {
 
 
@@ -190,7 +190,7 @@ public class Dialogs
     }
 
     public static (bool yesNo, bool verify) Question(
-        Control owner, string heading, bool verify, DialogResult defaultButton = DialogResult.Yes)
+        Control owner, string heading, string caption, string expandedText, bool verify, DialogResult defaultButton = DialogResult.Yes)
     {
 
         TaskDialogButton yesButton = new("Yes") { Tag = DialogResult.Yes };
@@ -211,10 +211,11 @@ public class Dialogs
 
         TaskDialogPage page = new()
         {
-            Caption = "Question",
+            Caption = caption,
             SizeToContent = true,
             Heading = heading,
-            Icon = new TaskDialogIcon(Properties.Resources.QuestionBlue),
+            Expander = new TaskDialogExpander(expandedText),
+            Icon = new TaskDialogIcon(Properties.Resources.agreement),
             Buttons = buttons,
             AllowCancel = true
         };
@@ -625,6 +626,8 @@ public class Dialogs
         }
 
     }
+
+
     public delegate void OnContinue(bool sender);
 #pragma warning disable CS8618
     public static event OnContinue ContinueOperation;

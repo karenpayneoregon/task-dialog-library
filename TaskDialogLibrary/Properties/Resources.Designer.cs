@@ -63,6 +63,16 @@ namespace TaskDialogLibrary.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
+        internal static System.Drawing.Icon agreement {
+            get {
+                object obj = ResourceManager.GetObject("agreement", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
         internal static System.Drawing.Icon ConfigurationFile_16x {
             get {
                 object obj = ResourceManager.GetObject("ConfigurationFile_16x", resourceCulture);
