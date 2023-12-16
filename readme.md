@@ -1,4 +1,7 @@
-﻿# .NET Core 6/7 TaskDialog
+﻿# .NET Core 8 TaskDialog
+
+> **Note**
+> Although all projects use C#12, most can be used in .NET Core 5, 6, 7 with little effort.
 
 When an application requires a message to be display or to ask a user questions the common method is to use a [MessageBox](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.messagebox?view=windowsdesktop-6.0).
 
@@ -9,3 +12,5 @@ Include are several methods to ask a question, display information and a dialog 
 For full documentation see the following [repository](https://github.com/karenpayneoregon/task-dialog-csharp) which has many more examples which were not placed here to keep this library simple.
 
 ![x](assets/screenshot.png)
+
+![Figure1](DoNotShowAgainApp/assets/figure1.png)
