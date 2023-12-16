@@ -69,9 +69,10 @@ partial class Form1
         Controls.Add(ResultsTextBox);
         Controls.Add(ShowAgainCheckBox);
         Controls.Add(DoNotShowAgainButton);
+        FormBorderStyle = FormBorderStyle.FixedToolWindow;
         Name = "Form1";
         StartPosition = FormStartPosition.CenterScreen;
-        Text = "Form1";
+        Text = "Do not show again demo";
         ResumeLayout(false);
         PerformLayout();
     }

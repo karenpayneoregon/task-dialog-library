@@ -1,5 +1,4 @@
-﻿using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
-
+﻿// ReSharper disable once CheckNamespace
 namespace TaskDialogLibrary;
 public partial class Dialogs
 {
@@ -18,7 +17,7 @@ public partial class Dialogs
             Heading = errorTitle,
             Expander = new TaskDialogExpander(errorMessage),
             Icon = new TaskDialogIcon(Properties.Resources.agreement),
-            Buttons = new TaskDialogButtonCollection() { okayButton },
+            Buttons = [okayButton],
             AllowCancel = true
         };
 

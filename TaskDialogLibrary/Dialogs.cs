@@ -577,12 +577,34 @@ public partial class Dialogs
 
     }
 
+    public static void ErrorBox(Form owner, Exception exception, string buttonText = "Dang")
+    {
+
+        TaskDialogButton singleButton = new(buttonText);
+
+        var text = $"Encountered the following{Environment.NewLine}{exception.Message}";
+
+
+        TaskDialogPage page = new()
+        {
+            Caption = "Information",
+            SizeToContent = true,
+            Heading = text,
+            Icon = TaskDialogIcon.Error,
+            Buttons = [singleButton]
+        };
+
+        TaskDialog.ShowDialog(owner,page);
+
+    }
+
     /// <summary>
     /// A dialog with option to not display again
     /// </summary>
+    /// <param name="owner">exist control or form</param>
     /// <param name="options"><seealso cref="ShowAgainOptions"/></param>
     /// <returns><seealso cref="NoShowResult"/></returns>
-    public static (NoShowResult DialogResult, bool showAgain) DoNotShowAgain(ShowAgainOptions options)
+    public static (NoShowResult DialogResult, bool showAgain) DoNotShowAgain(Control owner, ShowAgainOptions options)
     {
 
         TaskDialogPage page = new()
@@ -600,7 +622,7 @@ public partial class Dialogs
             DefaultButton = TaskDialogButton.No
         };
 
-        if (TaskDialog.ShowDialog(options.IntPtr, page) == TaskDialogButton.Yes)
+        if (TaskDialog.ShowDialog(owner, page) == TaskDialogButton.Yes)
         {
 
             bool showAgain = false;

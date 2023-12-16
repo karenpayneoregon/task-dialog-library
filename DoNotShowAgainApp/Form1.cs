@@ -47,7 +47,7 @@ public partial class Form1 : Form
             Owner = this
         };
 
-        (NoShowResult DialogResult, bool ShowAgain) result = Dialogs.DoNotShowAgain(options);
+        (NoShowResult DialogResult, bool ShowAgain) result = Dialogs.DoNotShowAgain(this, options);
 
         ShowAgainCheckBox.Checked = result.ShowAgain;
         ResultsTextBox.Text = result.ToString();
