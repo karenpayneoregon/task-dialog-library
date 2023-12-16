@@ -16,7 +16,7 @@ public partial class Form1 : Form
         Dialogs.Information(BadReadFileButton, "Next up, developer error.");
         try
         {
-            var text = File.ReadAllText("Payne.txt");
+            var text = File.ReadAllText("C:\\Files\\Payne.txt");
         }
         catch (Exception exception)
         {
