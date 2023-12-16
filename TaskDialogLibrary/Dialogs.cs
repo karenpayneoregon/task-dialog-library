@@ -161,7 +161,7 @@ public partial class Dialogs
 
         TaskDialogButton yesButton = new("Yes") { Tag = DialogResult.Yes };
         TaskDialogButton noButton = new("No") { Tag = DialogResult.No };
-        TaskDialogButtonCollection buttons = new TaskDialogButtonCollection();
+        TaskDialogButtonCollection buttons = new();
 
         if (defaultButton == DialogResult.Yes)
         {
@@ -190,8 +190,12 @@ public partial class Dialogs
     }
 
     public static (bool yesNo, bool verify) Question(
-        Control owner, string heading, string caption, string expandedText, bool verify, DialogResult defaultButton = DialogResult.Yes)
-    {
+        Control owner, 
+        string heading, 
+        string caption, 
+        string expandedText, 
+        bool verify, 
+        DialogResult defaultButton = DialogResult.Yes) {
 
         TaskDialogButton yesButton = new("Yes") { Tag = DialogResult.Yes };
         TaskDialogButton noButton = new("No") { Tag = DialogResult.No };
@@ -287,7 +291,7 @@ public partial class Dialogs
         TaskDialogButton yesButton = new("Yes") { Tag = DialogResult.Yes };
         TaskDialogButton noButton = new("No") { Tag = DialogResult.No };
 
-        var buttons = new TaskDialogButtonCollection();
+        TaskDialogButtonCollection buttons = new();
 
         if (defaultButton == DialogResult.Yes)
         {
@@ -331,7 +335,7 @@ public partial class Dialogs
             SizeToContent = true,
             Heading = heading,
             Icon = new TaskDialogIcon(Properties.Resources.exclamation24),
-            Buttons = new TaskDialogButtonCollection() { okayButton }
+            Buttons = [okayButton]
         };
 
 
@@ -356,7 +360,7 @@ public partial class Dialogs
             SizeToContent = true,
             Heading = heading,
             Icon = new TaskDialogIcon(Properties.Resources.exclamation24),
-            Buttons = new TaskDialogButtonCollection() { okayButton }
+            Buttons = [okayButton]
         };
 
         TaskDialog.ShowDialog(owner, page);
@@ -374,7 +378,7 @@ public partial class Dialogs
             SizeToContent = true,
             Heading = heading,
             Icon = new TaskDialogIcon(Properties.Resources.exclamation24),
-            Buttons = new TaskDialogButtonCollection() { okayButton }
+            Buttons = [okayButton]
         };
 
 
@@ -412,7 +416,7 @@ public partial class Dialogs
             Interval = 100
         };
 
-        timer.Tick += (_, _) =>
+        timer.Tick += ( _ , _ ) =>
         {
             remainingTenthSeconds -= 1;
 
@@ -462,7 +466,7 @@ public partial class Dialogs
             Text = string.Format(textFormat, (remainingTenthSeconds + 9) / 10),
             Icon = new TaskDialogIcon(Icon),
             ProgressBar = new TaskDialogProgressBar() { State = TaskDialogProgressBarState.Paused },
-            Buttons = new TaskDialogButtonCollection() { continueButton, cancelButton },
+            Buttons = [continueButton, cancelButton],
             Caption = "Auto-close"
         };
 
@@ -519,7 +523,7 @@ public partial class Dialogs
             Heading = header,
             Text = text,
             Icon = new TaskDialogIcon(icon),
-            Buttons = new TaskDialogButtonCollection() { continueButton, cancelButton },
+            Buttons = [continueButton, cancelButton],
             Caption = "Auto-close"
         };
 
@@ -566,7 +570,7 @@ public partial class Dialogs
             SizeToContent = true,
             Heading = text,
             Icon = TaskDialogIcon.Error,
-            Buttons = new TaskDialogButtonCollection() { singleButton }
+            Buttons = [singleButton]
         };
 
         TaskDialog.ShowDialog(page);
@@ -592,10 +596,7 @@ public partial class Dialogs
             {
                 Text = options.VerificationText
             },
-            Buttons = new TaskDialogButtonCollection()
-            {
-                TaskDialogButton.Yes, TaskDialogButton.No
-            },
+            Buttons = [TaskDialogButton.Yes, TaskDialogButton.No],
             DefaultButton = TaskDialogButton.No
         };
 

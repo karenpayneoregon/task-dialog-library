@@ -50,7 +50,7 @@
             // 
             // Question2Button
             // 
-            Question2Button.Location = new Point(32, 85);
+            Question2Button.Location = new Point(508, 86);
             Question2Button.Margin = new Padding(3, 4, 3, 4);
             Question2Button.Name = "Question2Button";
             Question2Button.Size = new Size(263, 31);
@@ -106,7 +106,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(375, 293);
+            ClientSize = new Size(804, 293);
             Controls.Add(ActionQuestionButton);
             Controls.Add(SecondsUpDown);
             Controls.Add(AutoCloseButton);

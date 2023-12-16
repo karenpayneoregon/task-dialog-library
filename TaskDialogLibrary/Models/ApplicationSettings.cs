@@ -1,5 +1,7 @@
 ﻿#nullable disable
 
+using TaskDialogLibrary.Classes;
+
 namespace TaskDialogLibrary.Models;
 
 public class ApplicationSettings
@@ -9,4 +11,5 @@ public class ApplicationSettings
     public string Text { get; set; }
     public string Caption { get; set; }
     public string VerificationText { get; set; }
+    public MainSettings MainSettings { get; set; }
 }

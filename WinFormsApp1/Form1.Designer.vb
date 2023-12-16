@@ -52,6 +52,7 @@ Partial Class Form1
         Controls.Add(StandardQuestionButton)
         Controls.Add(QuestionButton)
         Name = "Form1"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "Form1"
         ResumeLayout(False)
     End Sub
