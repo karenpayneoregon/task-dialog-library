@@ -37,4 +37,29 @@ public class Dialogs
 
     }
 
+    public static void OpenSolutionQuestion(Control owner)
+    {
+        TaskDialogPage page = new()
+        {
+            Caption = "Open solution",
+            SizeToContent = true,
+            Heading = "Open the solution in",
+            Text = "New instance or Current instance of Visual Studio?",
+            Icon = new TaskDialogIcon(Properties.Resources.question32),
+            Expander = new TaskDialogExpander("expandedText"),
+
+            Buttons =
+            [
+                new TaskDialogButton("Current Instance") { Tag = DialogResult.OK },
+                new TaskDialogButton("New Instance") { Tag = DialogResult.OK },
+                new TaskDialogButton("Cancel") { Tag = DialogResult.OK }
+            ]
+        };
+
+        TaskDialogVerificationCheckBox verifyCheckBox = new("Remember");
+        page.Verification = verifyCheckBox;
+
+        TaskDialog.ShowDialog(owner, page);
+    }
+
 }
